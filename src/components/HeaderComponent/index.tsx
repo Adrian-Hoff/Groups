@@ -2,12 +2,18 @@ import * as _ from "./styles";
 
 import logoImg from "@assets/logo.png";
 
-export default function HeaderComponent() {
+type Props = {
+  showBackButton?: boolean;
+};
+
+export default function HeaderComponent({ showBackButton = false }: Props) {
   return (
     <_.Container>
-      <_.BackButton>
-        <_.BackIcon />
-      </_.BackButton>
+      {showBackButton && (
+        <_.BackButton>
+          <_.BackIcon />
+        </_.BackButton>
+      )}
 
       <_.Logo source={logoImg} />
     </_.Container>
