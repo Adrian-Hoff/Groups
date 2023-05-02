@@ -4,7 +4,6 @@
     "strict": true,
     "baseUrl": "./",
     "paths":{
-      "piru/*":["./src/*"],
       "@assets/*":[
         "./src/assets/*"
       ],
@@ -20,8 +19,8 @@
       "storage/*":[
         "./src/storage/*"
       ],
-      "@theme/*":[
-        "./src/theme/*"
+      "@themes/*":[
+        "./src/themes/*"
       ],
       "@utils/*":[
         "./src/utils/*" 
