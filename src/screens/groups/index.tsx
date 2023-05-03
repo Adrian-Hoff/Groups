@@ -1,5 +1,5 @@
 //react
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList } from "react-native";
 import { useState } from "react";
 
 //styles
@@ -10,6 +10,7 @@ import HeaderComponent from "@components/HeaderComponent";
 import Highlight from "@components/HighlightComponent";
 import GroupCardComponent from "@components/GroupCardComponent";
 import ListEmptyComponent from "@components/ListEmptyComponent";
+import ButtonComponent from "@components/ButtonComponent";
 
 export default function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
@@ -33,8 +34,8 @@ export default function Groups() {
           />
         )}
       />
+
+      <ButtonComponent title="Create New Group" />
     </_.Container>
   );
 }
-
-const styles = StyleSheet.create({});
