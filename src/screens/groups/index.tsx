@@ -9,13 +9,10 @@ import * as _ from "./styles";
 import HeaderComponent from "@components/HeaderComponent";
 import Highlight from "@components/HighlightComponent";
 import GroupCardComponent from "@components/GroupCardComponent";
+import ListEmptyComponent from "@components/ListEmptyComponent";
 
 export default function Groups() {
-  const [groups, setGroups] = useState<string[]>([
-    "rocket guys",
-    "rocket guys 2",
-    "rocket guys 3",
-  ]);
+  const [groups, setGroups] = useState<string[]>([]);
 
   return (
     <_.Container>
@@ -28,6 +25,13 @@ export default function Groups() {
           return <GroupCardComponent title={item} />;
         }}
         keyExtractor={(item) => item}
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        ListEmptyComponent={() => (
+          <ListEmptyComponent
+            message="Hmmm... You had not create any group yet. 
+            Why don't you try by pressing the button bellow?"
+          />
+        )}
       />
     </_.Container>
   );
