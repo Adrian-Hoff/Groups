@@ -2,6 +2,7 @@ import * as _ from "./styles";
 
 import logoImg from "@assets/logo.png";
 
+import Icon from "react-native-vector-icons/AntDesign";
 type Props = {
   showBackButton?: boolean;
 };
@@ -11,7 +12,7 @@ export default function HeaderComponent({ showBackButton = false }: Props) {
     <_.Container>
       {showBackButton && (
         <_.BackButton>
-          <_.BackIcon />
+          <_.BackIcon name="left" />
         </_.BackButton>
       )}
 
