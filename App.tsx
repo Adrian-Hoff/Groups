@@ -5,7 +5,7 @@ import { StatusBar } from "react-native";
 import themes from "@themes/index";
 
 //screens
-import Groups from "./src/screens/groups";
+import Groups from "./src/screens/GroupsScreen";
 
 //styled
 import { ThemeProvider } from "styled-components";
