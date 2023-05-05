@@ -76,6 +76,10 @@ export default function PlayerScreen() {
         )}
         keyExtractor={(item) => item}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          { paddingBottom: 50 },
+          players.length === 0 && { flex: 1 },
+        ]}
       />
     </Container>
   );
