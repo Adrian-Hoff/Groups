@@ -13,6 +13,7 @@ import ButtonIconComponent from "@components/ButtonIconComponent";
 import FilterButtonComponent from "@components/FilterButtonComponent";
 import PlayerCardComponent from "@components/PlayerCardComponent";
 import ListEmptyComponent from "@components/ListEmptyComponent";
+import ButtonComponent from "@components/ButtonComponent";
 
 export default function PlayerScreen() {
   const [selectedGroup, setSelectedGroup] = useState<string>("");
@@ -81,6 +82,7 @@ export default function PlayerScreen() {
           players.length === 0 && { flex: 1 },
         ]}
       />
+      <ButtonComponent title="Remove Group" type="SECONDARY" />
     </Container>
   );
 }
