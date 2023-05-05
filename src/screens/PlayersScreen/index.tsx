@@ -13,6 +13,7 @@ import ButtonIconComponent from "@components/ButtonIconComponent";
 import FilterButtonComponent from "@components/FilterButtonComponent";
 
 export default function PlayerScreen() {
+  const [selectedGroup, setSelectedGroup] = useState<string>("");
   const [groups, setGroups] = useState([
     "grosrgegup a",
     "grourgp b",
@@ -40,7 +41,13 @@ export default function PlayerScreen() {
         data={groups}
         keyExtractor={(item) => item}
         horizontal
-        renderItem={({ item }) => <FilterButtonComponent title={item} />}
+        renderItem={({ item }) => (
+          <FilterButtonComponent
+            isActive={item === selectedGroup}
+            title={item}
+            onPress={() => setSelectedGroup(item)}
+          />
+        )}
       />
     </Container>
   );
