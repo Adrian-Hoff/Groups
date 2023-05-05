@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from "react-native-vector-icons/AntDesign";
 import { TouchableOpacity } from "react-native";
 
 type Props = {
