@@ -12,6 +12,7 @@ import InputComponent from "@components/InputComponent";
 import ButtonIconComponent from "@components/ButtonIconComponent";
 import FilterButtonComponent from "@components/FilterButtonComponent";
 import PlayerCardComponent from "@components/PlayerCardComponent";
+import ListEmptyComponent from "@components/ListEmptyComponent";
 
 export default function PlayerScreen() {
   const [selectedGroup, setSelectedGroup] = useState<string>("");
@@ -69,6 +70,9 @@ export default function PlayerScreen() {
         data={players}
         renderItem={({ item }) => (
           <PlayerCardComponent name={item} onRemove={() => {}} />
+        )}
+        ListEmptyComponent={() => (
+          <ListEmptyComponent message="This group is empty" />
         )}
         keyExtractor={(item) => item}
         showsVerticalScrollIndicator={false}
