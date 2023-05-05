@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import { useState } from "react";
 
 //styles
-import { Container, Form } from "./styles";
+import { Container, Form, PlayersCounter, HeaderList } from "./styles";
 
 //components
 import HighlightComponent from "@components/HighlightComponent";
@@ -22,6 +22,18 @@ export default function PlayerScreen() {
     "grogreerhup e",
     "grorup f",
   ]);
+  const [players, setPlayers] = useState([
+    "Adrian Hoff",
+    "John Smith",
+    "Robby Goodrich",
+    "Adam Patterson",
+    "James Brown",
+    "William Green",
+    "Joe Rogan",
+    "Michael Jordan",
+    "Jane Joplin",
+    "Roddy Rich",
+  ]);
   return (
     <Container>
       <HeaderComponent showBackButton />
@@ -37,18 +49,21 @@ export default function PlayerScreen() {
         <ButtonIconComponent icon="plus" size={22} />
       </Form>
 
-      <FlatList
-        data={groups}
-        keyExtractor={(item) => item}
-        horizontal
-        renderItem={({ item }) => (
-          <FilterButtonComponent
-            isActive={item === selectedGroup}
-            title={item}
-            onPress={() => setSelectedGroup(item)}
-          />
-        )}
-      />
+      <HeaderList>
+        <FlatList
+          data={groups}
+          keyExtractor={(item) => item}
+          horizontal
+          renderItem={({ item }) => (
+            <FilterButtonComponent
+              isActive={item === selectedGroup}
+              title={item}
+              onPress={() => setSelectedGroup(item)}
+            />
+          )}
+        />
+        <PlayersCounter>{players.length} </PlayersCounter>
+      </HeaderList>
     </Container>
   );
 }
