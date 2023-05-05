@@ -11,6 +11,7 @@ import HeaderComponent from "@components/HeaderComponent";
 import InputComponent from "@components/InputComponent";
 import ButtonIconComponent from "@components/ButtonIconComponent";
 import FilterButtonComponent from "@components/FilterButtonComponent";
+import PlayerCardComponent from "@components/PlayerCardComponent";
 
 export default function PlayerScreen() {
   const [selectedGroup, setSelectedGroup] = useState<string>("");
@@ -64,6 +65,14 @@ export default function PlayerScreen() {
         />
         <PlayersCounter>{players.length} </PlayersCounter>
       </HeaderList>
+      <FlatList
+        data={players}
+        renderItem={({ item }) => (
+          <PlayerCardComponent name={item} onRemove={() => {}} />
+        )}
+        keyExtractor={(item) => item}
+        showsVerticalScrollIndicator={false}
+      />
     </Container>
   );
 }
