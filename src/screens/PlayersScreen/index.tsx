@@ -1,6 +1,10 @@
-//styles
+import HeaderComponent from "@components/HeaderComponent";
 import { Container } from "./styles";
 
 export default function PlayerScreen() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <HeaderComponent showBackButton />
+    </Container>
+  );
 }
