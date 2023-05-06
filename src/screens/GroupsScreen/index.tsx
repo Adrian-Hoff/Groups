@@ -12,7 +12,7 @@ import GroupCardComponent from "@components/GroupCardComponent";
 import ListEmptyComponent from "@components/ListEmptyComponent";
 import ButtonComponent from "@components/ButtonComponent";
 
-export default function Groups() {
+export default function GroupsScreen() {
   const [groups, setGroups] = useState<string[]>([]);
 
   return (
