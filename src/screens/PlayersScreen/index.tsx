@@ -2,6 +2,9 @@
 import { FlatList } from "react-native";
 import { useState } from "react";
 
+//react-navigation
+import { useRoute } from "@react-navigation/native";
+
 //styles
 import { Container, Form, PlayersCounter, HeaderList } from "./styles";
 
@@ -15,16 +18,13 @@ import PlayerCardComponent from "@components/PlayerCardComponent";
 import ListEmptyComponent from "@components/ListEmptyComponent";
 import ButtonComponent from "@components/ButtonComponent";
 
+type RouteParams = {
+  group: string;
+};
+
 export default function PlayersScreen() {
-  const [selectedGroup, setSelectedGroup] = useState<string>("");
-  const [groups, setGroups] = useState([
-    "grosrgegup a",
-    "grourgp b",
-    "groergegup c",
-    "group d",
-    "grogreerhup e",
-    "grorup f",
-  ]);
+  const [selectedGroup, setSelectedGroup] = useState<string>("group a");
+  const [groups, setGroups] = useState(["group a", "group b"]);
   const [players, setPlayers] = useState([
     "Adrian Hoff",
     "John Smith",
@@ -37,14 +37,15 @@ export default function PlayersScreen() {
     "Jane Joplin",
     "Roddy Rich",
   ]);
+
+  const route = useRoute();
+  const { group } = route.params as RouteParams;
+
   return (
     <Container>
       <HeaderComponent showBackButton />
 
-      <HighlightComponent
-        title="Group Title"
-        subtitle="Add the gang to the Group"
-      />
+      <HighlightComponent title={group} subtitle="Add the gang to the Group" />
 
       <Form>
         <InputComponent placeholder="Name" />
