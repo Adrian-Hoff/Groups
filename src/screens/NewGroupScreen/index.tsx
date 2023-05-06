@@ -1,3 +1,6 @@
+//react-navigation
+import { useNavigation } from "@react-navigation/native";
+
 //styles
 import { Container, Content, GroupIcon } from "./styles";
 
@@ -8,6 +11,12 @@ import HeaderComponent from "@components/HeaderComponent";
 import InputComponent from "@components/InputComponent";
 
 export default function NewGroupScreen() {
+  const navigation = useNavigation();
+
+  function handleAddEvent() {
+    navigation.navigate("playersScreen", { group: "" });
+  }
+
   return (
     <Container>
       <HeaderComponent showBackButton />
@@ -18,7 +27,11 @@ export default function NewGroupScreen() {
           subtitle="Create new groupe and add people into it "
         />
         <InputComponent placeholder="Group Title" />
-        <ButtonComponent title="Create Group" style={{ marginTop: 20 }} />
+        <ButtonComponent
+          title="Create Group"
+          style={{ marginTop: 20 }}
+          onPress={handleAddEvent}
+        />
       </Content>
     </Container>
   );
