@@ -2,6 +2,9 @@
 import { FlatList } from "react-native";
 import { useState } from "react";
 
+//react-navigation
+import { useNavigation } from "@react-navigation/native";
+
 //styles
 import * as _ from "./styles";
 
@@ -14,6 +17,12 @@ import ButtonComponent from "@components/ButtonComponent";
 
 export default function GroupsScreen() {
   const [groups, setGroups] = useState<string[]>([]);
+
+  const navigation = useNavigation();
+
+  function handleNewGroupScreen() {
+    navigation.navigate("newGroupScreen");
+  }
 
   return (
     <_.Container>
@@ -35,7 +44,10 @@ export default function GroupsScreen() {
         )}
       />
 
-      <ButtonComponent title="Create New Group" />
+      <ButtonComponent
+        title="Create New Group"
+        onPress={handleNewGroupScreen}
+      />
     </_.Container>
   );
 }
