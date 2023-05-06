@@ -15,7 +15,7 @@ import PlayerCardComponent from "@components/PlayerCardComponent";
 import ListEmptyComponent from "@components/ListEmptyComponent";
 import ButtonComponent from "@components/ButtonComponent";
 
-export default function PlayerScreen() {
+export default function PlayersScreen() {
   const [selectedGroup, setSelectedGroup] = useState<string>("");
   const [groups, setGroups] = useState([
     "grosrgegup a",
